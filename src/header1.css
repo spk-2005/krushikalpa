@@ -1,0 +1,14 @@
+.header1-section{
+    display: flex;
+    flex-direction: column;
+}
+.header1-section ol{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.header1-section ol li{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+ }
