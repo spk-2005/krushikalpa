@@ -7,9 +7,10 @@
     position: relative;
   }
   
-  .menu-toggle {
+  #menu-toggle {
     background: none;
     border: none;
+    display: none;
     color: white;
     cursor: pointer;
     font-size: 24px;
@@ -63,7 +64,7 @@
     display: block;
   }
   
-  @media (min-width: 768px) { 
+  @media (min-width: 568px) { 
     .nav-menu {
       position: static;
       width: auto;
@@ -94,13 +95,40 @@
     .cancel-button {
       display: none;
     }
-    .menu-toggle {
+    #menu-toggle {
         background: none;
         border: none;
+        display: block !important;
         cursor: pointer;
-        font-size: 14px !important;
+        font-size: 54px !important;
         margin-left: 10px;
         z-index: 2; 
       }
       
+  }@media (max-width: 767px) {
+    #menu-toggle {
+      display: block;
+      font-size:30px;
+      padding: 0;
+      left: 0;
+      margin: 0;
+    }
+  
+    .nav-menu {
+      position: fixed;
+      left: -250px;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background: #34495e;
+      transition: left 0.3s ease-in-out;
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+  
+    .nav-menu.open {
+      left: 0;
+    }
   }
+  

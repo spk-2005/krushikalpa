@@ -4,7 +4,7 @@ import "./header1.css";
 export default function Header1() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function CustomLink({ href, children }) { // Removed onClick as it's handled by <a>
+  function CustomLink({ href, children }) { 
     const path = window.location.pathname;
     return (
       <li className={path === href ? "active" : ""}>
@@ -15,9 +15,9 @@ export default function Header1() {
 
   return (
     <header className="header1">
-      <button className="menu-toggle" onClick={() => {menuOpen ? setMenuOpen(false):setMenuOpen(true)}}>
-      <ion-icon name="menu-outline"></ion-icon>
-      </button>
+      <button id="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+  <ion-icon name={menuOpen ? "close-outline" : "menu-outline"}></ion-icon>
+</button>
 
       <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
   
