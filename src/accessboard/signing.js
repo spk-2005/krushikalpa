@@ -2,8 +2,10 @@ import axios from "axios";
 import { auth, provider } from "../firebase"; 
 import { signInWithPopup } from "firebase/auth";
 import '../accessboard/signing.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Signing() {
+  const navigate=useNavigate();
   const handleSignUpOrLoginWithGoogle = async (userType, actionType) => {
     try {
       const result = await signInWithPopup(auth, provider);
@@ -24,9 +26,20 @@ export default function Signing() {
           email: user.email,
         });
 
-        if (response.data.message === "User found") {
-          alert("Login successful!");
-        } else {
+        if (response.data.message === "User found" && userType==='Farmer') {
+          navigate(`./farmeraccount`);
+          localStorage.setItem('acctype','farmer');
+          localStorage.setItem('name',user.displayName);
+          localStorage.setItem('email',user.email);
+        } 
+        else if(response.data.message === "User found" && userType==='Farmer') {
+          navigate(`./consumeraccount`);          
+          localStorage.setItem('acctype','consumer');
+          localStorage.setItem('name',user.displayName);
+          localStorage.setItem('email',user.email);
+
+        }
+        else {
           alert("User not found, please sign up first.");
         }
       }
