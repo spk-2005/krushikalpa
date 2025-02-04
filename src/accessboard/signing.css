@@ -12,8 +12,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding-top:13em ;
 }
   
   .signing-section div:nth-child(1) {
@@ -40,6 +40,15 @@
     font-size: 16px;
     transition: 0.3s;
   }
+ 
+ #signup-btn{
+  color: black;
+
+ }
+ #signup-btn button{
+  background-color: transparent;
+  text-decoration: underline;
+  }
   .signing-section .login-btn{
     background-color: aliceblue;
     font-family:cursive;
@@ -52,6 +61,14 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 50;
     font-size: 30px;
+  }
+  #specf{
+    font-weight: 400;
+    color: rgb(0, 149, 255);
+  }
+  #specc{
+    font-weight: 400;
+    color: rgb(0, 170, 25);  
   }
   .signing-section div p{
     color: gray;
@@ -76,3 +93,39 @@
     text-decoration: underline;
   }
   
+  @media only screen and (max-width:500px){
+
+    .signing-section .login-btn{
+      font-size: .6rem;
+      padding: 5px 10px;
+    }
+    .signing-section{
+      flex-direction: column;
+    }  
+    .signing-section div{
+      width: 100%;       
+    }
+  .signing-section .signup-btn {
+    font-size: .6rem;
+    text-align: center;
+  }
+  .signing-section div p{
+    font-size: .7rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  #signup-btn{
+    width: 100%;
+    font-size: .6rem;
+  }
+  #dontacc{
+    font-size: .6rem;
+  }
+  .signing-section h1{
+    font-size: .8rem;
+  }
+  .signing-section div{
+    padding-top: 4em;
+  }
+  }

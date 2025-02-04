@@ -1,5 +1,5 @@
 
-import Accessaccount from './access-account';
+import Accessaccount from './accessboard/access-account';
 import './App.css';
 
 function App() {
