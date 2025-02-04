@@ -14,7 +14,7 @@
     cursor: pointer;
     font-size: 24px;
     margin-left: 10px;
-    z-index: 2; /* Ensure it's above the menu */
+    z-index: 2;
   }
   
   .nav-menu {
@@ -27,7 +27,7 @@
     transition: left 0.3s ease-in-out;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 1; /* Ensure it's below the toggle */
+    z-index: 1; 
   }
   
   .nav-menu.open {
@@ -63,23 +63,23 @@
     display: block;
   }
   
-  @media (min-width: 768px) { /* Correct media query syntax */
+  @media (min-width: 768px) { 
     .nav-menu {
       position: static;
       width: auto;
       height: auto;
       background: transparent;
       box-shadow: none;
-      left: 0; /* Remove the left positioning */
+      left: 0; 
       padding-top: 0;
-      display: flex; /* Make the menu horizontal */
-      justify-content: flex-end; /* Align to the right if needed */
+      display: flex;
+      justify-content: flex-end;
     }
   
     .nav-menu ol {
       display: flex;
       gap: 20px;
-      padding: 0; /* Reset padding */
+      padding: 0; 
     }
   
     .nav-menu ol li {
@@ -88,7 +88,7 @@
     }
   
     .nav-menu ol li a {
-      font-size: 16px; /* Adjusted font size for larger screens */
+      font-size: 16px;
     }
   
     .cancel-button {
@@ -100,7 +100,7 @@
         cursor: pointer;
         font-size: 14px !important;
         margin-left: 10px;
-        z-index: 2; /* Ensure it's above the menu */
+        z-index: 2; 
       }
       
   }
