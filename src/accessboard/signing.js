@@ -13,7 +13,7 @@ export default function Signing() {
 
       if (actionType === "signup") {
         
-        await axios.post("http://localhost:5000/signup", {
+        await axios.post("https://krushikalpa-backend.onrender.com/signup", {
           email: user.email,
           name: user.displayName,
           userType: userType,
@@ -22,7 +22,7 @@ export default function Signing() {
         alert(`User signed up successfully as ${userType}`);
       } else if (actionType === "login") {
         // Check if the user exists in MongoDB
-        const response = await axios.post("http://localhost:5000/login", {
+        const response = await axios.post("https://krushikalpa-backend.onrender.com/login", {
           email: user.email,
         });
 
