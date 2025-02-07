@@ -11,15 +11,6 @@
   position: relative;
   flex-wrap: wrap; /* Allows stacking on smaller screens */
 }
-#farmermiddle-section::after{  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('style.png');
-  filter: blur(4px);
-}
 .farmhero-wrapper{
   display: flex;
   flex-direction: row;

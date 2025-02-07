@@ -29,7 +29,7 @@ export default function Sellproducts() {
             receipt,
         };
     
-        fetch('http://localhost:5000/selledproducts', {
+        fetch('https://krushikalpa-backend.onrender.com/selledproducts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

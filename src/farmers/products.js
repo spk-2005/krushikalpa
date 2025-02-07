@@ -8,7 +8,7 @@ export default function Products() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const apiUrl = "http://localhost:5000/fproducts";
+        const apiUrl = "https://krushikalpa-backend.onrender.com/fproducts";
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => setPosts(data))
@@ -26,7 +26,7 @@ export default function Products() {
         return () => clearInterval(interval);
     }, []);
 
-    // Group posts by category
+    
     const groupedPosts = posts.reduce((acc, post) => {
         if (!acc[post.category]) {
             acc[post.category] = [];

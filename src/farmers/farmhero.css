@@ -7,10 +7,16 @@
 .clickable:hover {
     color: #0056b3;
 }
+.farmhero-section {
+    display: flex;
+    flex-direction: row;
+
+}
 .farmhero-section h1{
     font-family:cursive;
     color: rgb(255, 169, 30);
     font-size: 45px;
+    text-align: left;
 }
 
 .farmhero-section span{
