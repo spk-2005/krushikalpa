@@ -13,12 +13,6 @@ export default function Farmeraccount() {
     threshold: 0.2, // Starts animation when 20% of the component is visible
   });
 
-  // Observe when Farmermiddle is in view
-  const { ref: farmerMiddleRef, inView: farmerMiddleInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
   return (
     <>
     <section id='far'>
@@ -37,15 +31,7 @@ export default function Farmeraccount() {
       </div>
 
       <div id="middle-section">
-        <motion.div
-          ref={farmerMiddleRef}
-          className="farmhero-wrapper"
-          initial={{ opacity: 0, x: '-50%'}}
-          animate={farmerMiddleInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.5 }}
-        >
           <Farmermiddle />
-        </motion.div>
       </div>
       </section>
     </>

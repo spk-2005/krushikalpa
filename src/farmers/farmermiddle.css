@@ -1,6 +1,6 @@
 #farmermiddle-section {
   padding: 2em;
-  background-color: rgba(15, 72, 16, 0.883);
+  background-color: rgba(9, 104, 11, 0.883);
   box-shadow: 0px 8px 76px rgb(0, 71, 8);
   color: white;
   display: flex;
@@ -8,9 +8,25 @@
   align-items: center;
   justify-content: space-between;
   gap: 2em;
+  position: relative;
   flex-wrap: wrap; /* Allows stacking on smaller screens */
 }
-
+#farmermiddle-section::after{  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('style.png');
+  filter: blur(4px);
+}
+.farmhero-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
 #farmermiddle-section img {
   width: 100%;
   max-width: 500px;
