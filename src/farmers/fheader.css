@@ -1,0 +1,208 @@
+/* General header styles */
+.fheader1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Background image */
+.fheader1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('image-1.png');
+  filter: brightness(1.3);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Logo styling */
+.fheader1 #logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Navigation menu */
+.fheader1 .nav-menu {
+  display: flex;
+  align-items: center;
+}
+/* Scrollbar styling */
+.fheader1 .nav-menu ol {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  background: rgb(0, 103, 22);
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 0;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #4caf50 #1b5e20; /* Scrollbar track & thumb color */
+}
+
+/* WebKit Browsers (Chrome, Edge, Safari) */
+.fheader1 .nav-menu ol::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Scrollbar track */
+.fheader1 .nav-menu ol::-webkit-scrollbar-track {
+  background: #1b5e20;
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb */
+.fheader1 .nav-menu ol::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4caf50, #2e7d32);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.fheader1 .nav-menu ol::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #66bb6a, #388e3c);
+}
+
+/* Optional: Add shadow effect to thumb */
+.fheader1 .nav-menu ol::-webkit-scrollbar-thumb:active {
+  display: none;
+  background: linear-gradient(45deg, #81c784, #43a047);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.fheader1 .nav-menu ol li {
+  white-space: nowrap;
+  position: relative;
+}
+
+.fheader1 .nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.fheader1 .nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Profile Icon */
+.fheader1 #prof-icon {
+  position: relative;
+}
+
+.fheader1 #prof-icon ion-icon {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Dropdown for profile */
+.fheader1 .nav-menu li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -5em;
+  background: rgb(0, 121, 26);
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
+.fheader1 .nav-menu li:hover ul {
+  display: block;
+}
+
+/* Each dropdown item */
+.fheader1 .nav-menu li ul li {
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fheader1 .nav-menu li ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hover underline effect */
+.fheader1 .nav-menu li::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+  width: 70%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.fheader1 .nav-menu li:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Responsive Styles ---------- */
+#menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+}
+
+/* Mobile Menu */
+@media screen and (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  .fheader1 .nav-menu li ul {
+    top: 0;
+    left: 100%;
+    position: absolute;
+  }
+  /* Menu styles */
+  .fheader1 .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 103, 22, 0.95);
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .fheader1 .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .fheader1 .nav-menu ol {
+    flex-direction: column;
+    gap: 10px;
+    background: transparent;
+  }
+
+  .fheader1 .nav-menu a {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+  }
+}

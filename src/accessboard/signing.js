@@ -32,7 +32,7 @@ export default function Signing() {
           localStorage.setItem('name',user.displayName);
           localStorage.setItem('email',user.email);
         } 
-        else if(response.data.message === "User found" && userType==='Farmer') {
+        else if(response.data.message === "User found" && userType==='Consumer') {
           navigate(`./consumeraccount`);          
           localStorage.setItem('acctype','consumer');
           localStorage.setItem('name',user.displayName);

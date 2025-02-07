@@ -1,0 +1,72 @@
+.farmer-profile {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .farmer-profile h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #003366;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    padding: 15px;
+    border: 1px solid #003366;
+    background: #ffffff;
+    border-radius: 8px;
+  }
+  
+  .farmer-profile h2 {
+    font-size: 18px;
+    color: #003366;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 5px;
+  }
+  
+  .farmer-profile label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+ .farmer-profile input,
+ .farmer-profile select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+ .farmer-profile input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+  }
+  
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .farmer-profile {
+      padding: 10px;
+    }
+  }
+  

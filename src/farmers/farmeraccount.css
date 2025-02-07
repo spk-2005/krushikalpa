@@ -1,0 +1,18 @@
+#gh {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; /* Ensures nothing spills outside the container */
+}
+
+#gh::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('image-1.png');
+    opacity: 2; /* Set your desired opacity here */
+    filter: brightness(1.3);
+    z-index: -1; /* Ensures the image stays behind the content */
+}
