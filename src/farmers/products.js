@@ -4,6 +4,8 @@ import './products.css';
 
 export default function Products() {
     const [posts, setPosts] = useState([]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
     const [currentDateTime, setCurrentDateTime] = useState('');
     const navigate = useNavigate();
 
@@ -11,7 +13,10 @@ export default function Products() {
         const apiUrl = "https://krushikalpa-backend.onrender.com/fproducts";
         fetch(apiUrl)
             .then((response) => response.json())
-            .then((data) => setPosts(data))
+            .then((data) => {
+                setPosts(data);
+                setFilteredPosts(data); // Set initial filtered posts
+            })
             .catch((err) => console.error('Error fetching:', err));
 
         const updateDateTime = () => {
@@ -26,32 +31,47 @@ export default function Products() {
         return () => clearInterval(interval);
     }, []);
 
-    
-    const groupedPosts = posts.reduce((acc, post) => {
+    // Filter products based on search input
+    useEffect(() => {
+        const filtered = posts.filter(post =>
+            post.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredPosts(filtered);
+    }, [searchTerm, posts]);
+
+    const groupedPosts = filteredPosts.reduce((acc, post) => {
         if (!acc[post.category]) {
             acc[post.category] = [];
         }
         acc[post.category].push(post);
         return acc;
     }, {});
+
     const handleProductClick = (product) => {
-        console.log('Selected product:', product);  
-        const productId = product._id;  
+        console.log('Selected product:', product);
+        const productId = product._id;
         if (productId) {
             navigate(`/sellproducts`, { state: { product } });
         } else {
             console.error('Product ID is missing');
         }
     };
-    
-    
 
     return (
         <section id="fproducts-section">
             <div className="products-container">
+            <h1>Sell Your Products Now</h1>
                 <div className="date-time">
                     <p>{currentDateTime}</p>
                 </div>
+
+                <input
+                    type="text"
+                    placeholder="Search products..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="search-bar"
+                />
 
                 {Object.keys(groupedPosts).length > 0 ? (
                     Object.keys(groupedPosts).map((category, index) => (
@@ -75,7 +95,7 @@ export default function Products() {
                         </div>
                     ))
                 ) : (
-                    <p>Loading products...</p>
+                    <p>No products found...</p>
                 )}
             </div>
         </section>

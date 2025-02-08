@@ -5,6 +5,7 @@ import Fheader from './fheader';
 import './farmeraccount.css';
 import Farmhero from './farmhero';
 import Farmermiddle from './farmermiddle';
+import Farmermiddle1 from './farmermiddle1';
 
 export default function Farmeraccount() {
   // Observe when Farmhero is in view
@@ -32,6 +33,7 @@ export default function Farmeraccount() {
 
       <div id="middle-section">
           <Farmermiddle />
+          <Farmermiddle1/>
       </div>
       </section>
     </>

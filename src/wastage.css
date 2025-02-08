@@ -1,0 +1,98 @@
+/* General Styles */
+.wastage-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .wastage-cont {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+ .wastage-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+ .wastage-section p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Form Styles */
+ .wastage-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+ .wastage-section label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+  }
+  
+ .wastage-section span {
+    margin-bottom: 5px;
+  }
+  
+ .wastage-section input,.wastage-section select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+ .wastage-section input:focus,.wastage-section select:focus {
+    border-color: #007bff;
+  }
+  
+ .wastage-section button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+ .wastage-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .wastage-cont {
+      width: 90%;
+      padding: 15px;
+    }
+  
+   .wastage-section h2 {
+      font-size: 20px;
+    }
+  
+  .wastage-section  p {
+      font-size: 14px;
+    }
+  
+   .wastage-section input,.wastage-section select,.wastage-section button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  

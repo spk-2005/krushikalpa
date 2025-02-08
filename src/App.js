@@ -7,6 +7,7 @@
   import Farmerprofile from './farmers/farmerprofile';
   import Products from './farmers/products';
   import Sellproducts from './farmers/sellproducts';
+import Wastage from './wastage';
   function App() {
     return (
       <>
@@ -18,6 +19,8 @@
         <Route path='/farmerprofile' element={<Farmerprofile/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/sellproducts' element={<Sellproducts/>}/>
+        <Route path='/wastage' element={<Wastage/>}/>
+        
       </Routes>
       </BrowserRouter>
       </>

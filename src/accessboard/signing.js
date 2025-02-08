@@ -3,16 +3,26 @@ import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import '../accessboard/signing.css';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Signing() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const accountType = localStorage.getItem("acctype");
+    if (accountType === "farmer") {
+      navigate("/farmeraccount");
+    } else if (accountType === "consumer") {
+      navigate("/consumeraccount");
+    }
+  }, [navigate]);
+
   const handleSignUpOrLoginWithGoogle = async (userType, actionType) => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
       if (actionType === "signup") {
-        
         await axios.post("https://krushikalpa-backend.onrender.com/signup", {
           email: user.email,
           name: user.displayName,
@@ -20,28 +30,25 @@ export default function Signing() {
         });
 
         alert(`User signed up successfully as ${userType}`);
-      } else if (actionType === "login") {
-        // Check if the user exists in MongoDB
-        const response = await axios.post("https://krushikalpa-backend.onrender.com/login", {
-          email: user.email,
-        });
+      }
 
-        if (response.data.message === "User found" && userType==='Farmer') {
-          navigate(`./farmeraccount`);
-          localStorage.setItem('acctype','farmer');
-          localStorage.setItem('name',user.displayName);
-          localStorage.setItem('email',user.email);
-        } 
-        else if(response.data.message === "User found" && userType==='Consumer') {
-          navigate(`./consumeraccount`);          
-          localStorage.setItem('acctype','consumer');
-          localStorage.setItem('name',user.displayName);
-          localStorage.setItem('email',user.email);
+      // Login logic (executed for both login and after signup)
+      const response = await axios.post("https://krushikalpa-backend.onrender.com/login", {
+        email: user.email,
+      });
 
+      if (response.data.message === "User found") {
+        localStorage.setItem("acctype", userType.toLowerCase());
+        localStorage.setItem("name", user.displayName);
+        localStorage.setItem("email", user.email);
+
+        if (userType === "Farmer") {
+          navigate("/farmeraccount");
+        } else if (userType === "Consumer") {
+          navigate("/consumeraccount");
         }
-        else {
-          alert("User not found, please sign up first.");
-        }
+      } else {
+        alert("User not found, please sign up first.");
       }
     } catch (error) {
       alert(error.response?.data?.message || error.message);
@@ -58,25 +65,26 @@ export default function Signing() {
         </button> 
         <span id="dontacc">Don't Have an account</span>
         <span id="signup-btn">
-        <button className='signup-btn'onClick={() => handleSignUpOrLoginWithGoogle("Farmer", "signup")}>
-          Sign Up  
-        </button>as Farmer 
+          <button className='signup-btn' onClick={() => handleSignUpOrLoginWithGoogle("Farmer", "signup")}>
+            Sign Up  
+          </button>as Farmer 
         </span>
       </div>
 
       <div>
         <h1>For <span id="specc">Consumers</span></h1>
         <p>Support sustainable food practices.</p>
-        <button className="login-btn"onClick={() => handleSignUpOrLoginWithGoogle("Consumer", "login")}>
+        <button className="login-btn" onClick={() => handleSignUpOrLoginWithGoogle("Consumer", "login")}>
           Login 
         </button>
         <span id="dontacc">Don't Have an account</span>
         <span id="signup-btn">
-         <button className='signup-btn'onClick={() => handleSignUpOrLoginWithGoogle("Consumer", "signup")}>
-          Sign Up
-        </button>as Consumer </span>
-       
+          <button className='signup-btn' onClick={() => handleSignUpOrLoginWithGoogle("Consumer", "signup")}>
+            Sign Up
+          </button>as Consumer 
+        </span>
       </div>
+
     </section>
   );
 }

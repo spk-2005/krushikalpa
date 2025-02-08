@@ -1,0 +1,108 @@
+/* Farmermiddle1 Section Styles */
+.farmermiddle1-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-direction: column; 
+    overflow: hidden;
+    background-color: #0a3b00;
+  }
+  
+  .farmermiddle1-section div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Ensures vertical alignment */
+  }
+  
+  .farmermiddle1-section img {
+    width: 50%;    
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .farmermiddle1-section p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #dfaf00;
+  }
+  
+  .farmermiddle1-cont{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .farmermiddle1-section span {
+    font-size: 1.2rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .farmermiddle1-section button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .farmermiddle1-section button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .farmermiddle1-section {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .farmermiddle1-section img {
+      max-width: 100%;
+      margin-bottom: 20px; /* Adds space between content and image */
+    }
+  
+    .farmermiddle1-section p {
+      font-size: 1.2rem;
+    }
+  
+    .farmermiddle1-section span {
+      font-size: 1rem;
+    }
+  
+    .farmermiddle1-section button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .farmermiddle1-section {
+        overflow-x: hidden;
+      display: flex;
+      flex-direction: column; /* Changed from row to column for better mobile layout */
+
+    }
+  
+    .farmermiddle1-section p {
+      font-size: 1rem;
+    }
+  
+    .farmermiddle1-section span {
+      font-size: 0.9rem;
+    }
+  
+    .farmermiddle1-section button {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+    }
+  }
+  

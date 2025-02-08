@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-
+import './sellproducts.css';
 export default function Sellproducts() {
     const location = useLocation();
     const { product } = location.state || {};  
@@ -49,8 +49,8 @@ export default function Sellproducts() {
     
     return (
         <div>
-            <section>
-                <div>
+            <section className='container'>
+                <div className='product-info'>
                     <span>Category: {product.category}</span>
                     <h2>{product.name}</h2>
                     <img 
@@ -63,7 +63,7 @@ export default function Sellproducts() {
             </section>
             
             <section>
-                <div>
+                <div className='input-section'>
                     <input 
                         type='file' 
                         onChange={(e) => setReceipt(e.target.files[0])} // Save the file as receipt
