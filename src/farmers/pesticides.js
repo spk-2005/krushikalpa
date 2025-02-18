@@ -4,8 +4,7 @@ export default function Pesticides() {
   return (
     <>
     <section>
-        <div>
-        
+        <div>        
         </div>    
     </section> 
     </>

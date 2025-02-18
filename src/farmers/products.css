@@ -65,7 +65,10 @@
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.3s;
 }
-
+#per{
+    color: #000000;
+    font-weight: 300;
+}
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);

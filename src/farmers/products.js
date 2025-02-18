@@ -87,7 +87,7 @@ export default function Products() {
                                         />
                                         <div className="product-info">
                                             <h3 className="product-name">{post.name}</h3>
-                                            <span className="product-price">{post.price}₹/Kg</span>
+                                            <span className="product-price">{post.price}/<span id='per'>{post.per}</span></span>
                                         </div>
                                     </div>
                                 ))}

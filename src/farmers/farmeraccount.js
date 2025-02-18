@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Fheader from './fheader';
-import './farmeraccount.css';
+  import Fheader from './fheader';
+  import './farmeraccount.css';
 import Farmhero from './farmhero';
 import Farmermiddle from './farmermiddle';
-import Farmermiddle1 from './farmermiddle1';
+import Farmerwaste from './farmerwaste';
+import Contact from '../contact';
 
 export default function Farmeraccount() {
   // Observe when Farmhero is in view
@@ -33,7 +34,8 @@ export default function Farmeraccount() {
 
       <div id="middle-section">
           <Farmermiddle />
-          <Farmermiddle1/>
+          <Farmerwaste/>
+          <Contact/>
       </div>
       </section>
     </>

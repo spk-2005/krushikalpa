@@ -1,0 +1,174 @@
+/* Main Section */
+#pesticides-section {
+  padding: 20px;
+  border-radius: 10px;
+  max-height: max-content;
+  position: relative;
+}
+
+/* Heading */
+#pesticides-section h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Search Bar */
+#pesticides-section #search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#search-container input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border: 2px solid #2a7a2e;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  outline: none;
+}
+
+/* Search Bar Focus */
+#search-container input:focus {
+  border-color: #1e5b20;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Grid */
+#pesticides-section ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Product Card */
+.pesticide-item {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.pesticide-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Product Image */
+.pesticide-image {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Product Details */
+.pesticide-item h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.pesticide-item p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Price */
+.pesticide-item strong {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Add to Cart Button */
+#pesticides-section button {
+  background: #2a7a2e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+#pesticides-section button:hover {
+  background: #1e5b20;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #pesticides-section {
+    padding: 15px;
+  }
+
+  #pesticides-section h1 {
+    font-size: 24px;
+  }
+
+  #search-container input {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .pesticide-item {
+    padding: 10px;
+  }
+
+  .pesticide-item h3 {
+    font-size: 18px;
+  }
+
+  .pesticide-item p {
+    font-size: 13px;
+  }
+
+  #pesticides-section button {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #pesticides-section h1 {
+    font-size: 20px;
+  }
+
+  #search-container input {
+    padding: 14px;
+  }
+
+  .pesticide-item {
+    padding: 8px;
+  }
+
+  .pesticide-item h3 {
+    font-size: 16px;
+  }
+
+  .pesticide-item p {
+    font-size: 12px;
+  }
+
+  #pesticides-section button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}

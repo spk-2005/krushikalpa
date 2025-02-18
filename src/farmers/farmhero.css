@@ -33,7 +33,7 @@
 }
 .farmhero-section p{
     font-size: 20px;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     filter: brightness(2) !important;
 }
 

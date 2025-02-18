@@ -1,6 +1,6 @@
   import React, { useState } from "react";
   import "./fheader.css";
-  import logo from "./logo (2).png";
+  import logo from "./Krushikalpa-removebg-preview.png";
   import {signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
@@ -30,16 +30,16 @@ const handleLogout = async () => {
           <ion-icon name={menuOpen ? "close-outline" : "menu-outline"}></ion-icon>
         </button>
 
-        <img src={logo} alt="Logo" id="logo" />
+        <a href="/"><img src={logo} alt="Logo" id="logo" /></a>
         <nav className={`nav-menu ${menuOpen ? "open" : "closed"}`}>
           <ol>
-            <CustomLink href="#">Dashboard</CustomLink>
+            <CustomLink href="/farmerdashboard">Dashboard</CustomLink>
             <CustomLink href="/products">Products</CustomLink>
             <CustomLink href="/wastage">Recycling Wastage</CustomLink>
-            <CustomLink href="#">Pesticides</CustomLink>
-            <CustomLink href="#">Prices</CustomLink>
-            <CustomLink href="#">Sell Now</CustomLink>
-            <CustomLink href="#">Prices</CustomLink>
+            <CustomLink href="fpesticides">Pesticides</CustomLink>
+            <CustomLink href="/fprices">Prices</CustomLink>
+            <CustomLink href="#">Articles & Blogs</CustomLink>
+            <CustomLink href="/farminguidence">Farming Guidence</CustomLink>
             <div id="prof-icon">
               <li>
                 <ion-icon name="person-circle-outline"></ion-icon>

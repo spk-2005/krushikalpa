@@ -1,0 +1,90 @@
+/* Farmer Dashboard Section */
+#farmer-dashboard-section {
+    padding: 20px;
+    background-color: #f4f9f4;
+    color: #333;
+  }
+  
+  #farmer-dashboard-section h1 {
+    font-size: 2rem;
+    color: #4caf50; /* Green */
+    margin-bottom: 20px;
+  }
+  
+  #farmer-dashboard-section h2 {
+    font-size: 1.5rem;
+    color: #388e3c; /* Dark Green */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #farmer-dashboard-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  #farmer-dashboard-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #farmer-dashboard-section ul li {
+    padding: 10px;
+    background-color: #e8f5e9; /* Light Green */
+    border: 1px solid #c8e6c9; /* Lighter Green */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #farmer-dashboard-section ul li a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #farmer-dashboard-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    #farmer-dashboard-section {
+      padding: 15px;
+    }
+  
+    #farmer-dashboard-section h1 {
+      font-size: 1.5rem;
+    }
+  
+    #farmer-dashboard-section h2 {
+      font-size: 1.2rem;
+    }
+  
+    #farmer-dashboard-section p {
+      font-size: 0.9rem;
+    }
+  
+    #farmer-dashboard-section ul li {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #farmer-dashboard-section h1 {
+      font-size: 1.3rem;
+    }
+  
+    #farmer-dashboard-section h2 {
+      font-size: 1rem;
+    }
+  
+    #farmer-dashboard-section p {
+      font-size: 0.8rem;
+    }
+  
+    #farmer-dashboard-section ul li {
+      font-size: 0.8rem;
+    }
+  }
+  

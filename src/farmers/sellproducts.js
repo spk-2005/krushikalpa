@@ -48,7 +48,9 @@ export default function Sellproducts() {
     };
     
     return (
-        <div>
+        <>
+        <h1 id='sehead'>Sell Your Product </h1>
+        <div id='sellprod-section'>
             <section className='container'>
                 <div className='product-info'>
                     <span>Category: {product.category}</span>
@@ -66,11 +68,11 @@ export default function Sellproducts() {
                 <div className='input-section'>
                     <input 
                         type='file' 
-                        onChange={(e) => setReceipt(e.target.files[0])} // Save the file as receipt
+                        onChange={(e) => setReceipt(e.target.files[0])} 
                     />
                     <input 
                         type='text' 
-                        placeholder='Enter Number Of Kgs Available'
+                        placeholder='Enter Number Of Kgs/dozens/liters Available'
                         value={kgAvailable}
                         onChange={(e) => setKgAvailable(e.target.value)}
                     />
@@ -78,5 +80,6 @@ export default function Sellproducts() {
                 </div>
             </section>
         </div>
+        </>
     );
 }

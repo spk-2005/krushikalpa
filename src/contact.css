@@ -1,0 +1,109 @@
+/* General Styling for the Contact Section */
+#contact-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-address, .contact-social {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-address h3, .contact-social h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2c7d46;
+  }
+  
+  .contact-address ol, .contact-social ol {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .contact-address li, .contact-social li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-social ol li a {
+    font-size: 1.5rem;
+    color: #333;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contact-social ol li a:hover {
+    color: #2c7d46;
+    transform: scale(1.1);
+  }
+  
+  .contact-social ol li a ion-icon {
+    font-size: 1.8rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-address, .contact-social {
+      flex: 1 100%;
+      margin-bottom: 20px;
+    }
+  
+    .contact-address h3, .contact-social h3 {
+      font-size: 1.6rem;
+    }
+  
+    .contact-address li, .contact-social li {
+      font-size: 1rem;
+    }
+  
+    .contact-social ol li a {
+      font-size: 1.4rem;
+      margin-right: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #contact-section {
+      padding: 20px;
+    }
+  
+    .contact-container {
+      gap: 20px;
+    }
+  
+    .contact-address, .contact-social {
+      padding: 15px;
+    }
+  
+    .contact-address h3, .contact-social h3 {
+      font-size: 1.4rem;
+    }
+  
+    .contact-address li, .contact-social li {
+      font-size: 0.95rem;
+    }
+  
+    .contact-social ol li a {
+      font-size: 1.3rem;
+      margin-right: 8px;
+    }
+  }
+  
