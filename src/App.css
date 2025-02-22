@@ -1,0 +1,128 @@
+.chatbot-section-inapp {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 400px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  /* Chat icon button */
+  .chatbot-section-inapp:not(:has(button)) {
+    height: 50px;
+    width: 50px;
+    bottom: 10px;
+    right: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatbot-section-inapp:not(:has(button)):hover {
+    transform: scale(1.1);
+  }
+  
+  /* Close button */
+  .chatbot-section-inapp #buticon {
+    position: absolute;
+    background-color: aliceblue !important;
+    border-radius: 100%;
+    top: 10px;
+    left: -30px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    transition: opacity 0.2s ease;
+  }
+  
+  .chatbot-section-inapp #buticon:hover {
+    opacity: 0.7;
+  }
+  
+  /* Ensure chatbot container fits properly */
+  .chatbot-section-inapp .chatbot-container {
+    height: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+  
+  /* Animation for opening/closing */
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .chatbot-section-inapp:has(.chatbot-container) {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .chatbot-section-inapp {
+      width: 100%;
+    }
+    
+    .chatbot-section-inapp:not(:has(button)) {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+  }
+  
+  /* Optional overlay for mobile */
+  @media (max-width: 768px) {
+    .chatbot-section-inapp:has(.chatbot-container)::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+  .chatbot-section-inapp #buticon {
+    left: 0;
+    font-size: 10px;
+  }
+}
+.notification-alert {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification-alert button {
+  transition: all 0.2s ease;
+}
+
+.notification-alert button:hover {
+  transform: scale(1.1);
+}

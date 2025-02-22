@@ -1,0 +1,197 @@
+/* Main container styles */
+.fprices-section {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  /* Header styles */
+  .fprices-section h2 {
+    color: #2c5282;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Date and time display */
+  .date-time {
+    background-color: #f7fafc;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    color: #4a5568;
+  }
+  
+  .date-time strong {
+    color: #2d3748;
+    margin-right: 0.25rem;
+  }
+  
+  /* Table styles */
+ .fprices-section  table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Table header styles */
+ .fprices-section  thead {
+    background-color: #4299e1;
+    color: white;
+  }
+  
+ .fprices-section  th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  /* Table body styles */
+ .fprices-section  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+  }
+  
+  
+  /* Image styles */
+ .fprices-section  td img {
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Loading and error states */
+ .fprices-section  p {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #f7fafc;
+    margin: 1rem 0;
+  }
+  
+ .fprices-section  p[style*="color: red"] {
+    background-color: #fff5f5;
+    color: #c53030;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .fprices-section {
+      padding: 0.5rem;
+      margin: 0.5rem;
+    }
+  
+    /* Convert table to cards */
+   .fprices-section  table,.fprices-section  thead,.fprices-section  tbody, .fprices-section tr, .fprices-section th,.fprices-section  td {
+      display: block;
+    }
+  
+    .fprices-section thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+   .fprices-section  tr {
+      margin-bottom: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  
+    .fprices-section td {
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+      border-bottom: 1px solid #e2e8f0;
+    }
+  
+   .fprices-section  td:last-child {
+      border-bottom: none;
+    }
+  
+  .fprices-section   td:before {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      content: attr(data-label);
+      font-weight: 600;
+      color: #2d3748;
+    }
+  
+    /* Add data labels for mobile view */
+ .fprices-section    td:nth-of-type(1):before { content: 'Product Name'; }
+  .fprices-section   td:nth-of-type(2):before { content: 'Category'; }
+  .fprices-section   td:nth-of-type(3):before { content: 'Price'; }
+  .fprices-section   td:nth-of-type(4):before { content: 'Per'; }
+  .fprices-section   td:nth-of-type(5):before { content: 'Image'; }
+  
+    /* Center images in mobile view */
+   .fprices-section  td:last-child {
+      text-align: center;
+      padding-left: 1rem;
+    }
+  
+  .fprices-section   td img {
+      margin: 0.5rem auto;
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  /* Small screen optimizations */
+  @media screen and (max-width: 480px) {
+    .fprices-section {
+      padding: 0.25rem;
+      margin: 0.25rem;
+    }
+  
+    .date-time {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+  
+  .fprices-section   td {
+      padding: 0.5rem 0.75rem 0.5rem 45%;
+      font-size: 0.875rem;
+    }
+  
+   .fprices-section  td:before {
+      font-size: 0.875rem;
+    }
+  
+   .fprices-section  td img {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .fprices-section {
+      box-shadow: none;
+    }
+  
+    .date-time {
+      border: 1px solid #e2e8f0;
+    }
+  
+ .fprices-section    table {
+      box-shadow: none;
+    }
+  
+ .fprices-section    tr:hover {
+      background-color: transparent;
+    }
+  } 

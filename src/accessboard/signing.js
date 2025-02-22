@@ -23,21 +23,32 @@ export default function Signing() {
       const user = result.user;
 
       if (actionType === "signup") {
-        await axios.post("https://krushikalpa-backend.onrender.com/signup", {
-          email: user.email,
-          name: user.displayName,
-          userType: userType,
-        });
+        const signupResponse = await axios.post(
+          `https://krushikalpa-backend.onrender.com/signup`, 
+          {
+            email: user.email,
+            name: user.displayName,
+            userType: userType, // Ensure userType is correctly passed
+          }
+        );
 
-        alert(`User signed up successfully as ${userType}`);
+        if (signupResponse.data.message === "User already exists") {
+          alert(`User already signed up as ${userType}. Please log in.`);
+        } else {
+          alert(`User signed up successfully as ${userType}`);
+        }
       }
 
-      // Login logic (executed for both login and after signup)
-      const response = await axios.post("https://krushikalpa-backend.onrender.com/login", {
-        email: user.email,
-      });
+      // Login logic (checks in the correct schema)
+      const loginResponse = await axios.post(
+        `https://krushikalpa-backend.onrender.com/login`, 
+        {
+          email: user.email,
+          userType: userType, // Ensure we pass userType for proper schema check
+        }
+      );
 
-      if (response.data.message === "User found") {
+      if (loginResponse.data.message === "User found") {
         localStorage.setItem("acctype", userType.toLowerCase());
         localStorage.setItem("name", user.displayName);
         localStorage.setItem("email", user.email);
@@ -48,7 +59,7 @@ export default function Signing() {
           navigate("/consumeraccount");
         }
       } else {
-        alert("User not found, please sign up first.");
+        alert("User not found. Please sign up first.");
       }
     } catch (error) {
       alert(error.response?.data?.message || error.message);

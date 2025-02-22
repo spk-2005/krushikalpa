@@ -8,21 +8,7 @@
   gap: 2em;
   position: relative;
   flex-wrap: wrap; /* Allows stacking on smaller screens */
-}
-#farmermiddle-section::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('f2.jpg') !important;
-  background-size: cover;
-  background-position: center;
-  opacity: 1; /* Set your desired opacity here */
-  filter: brightness(.4);
-  z-index: -1; /* Ensures the image stays behind the content */}
-.content button{
+}.content button{
   background-color: antiquewhite;
   text-align: center;
   padding: 5px 5px;

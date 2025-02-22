@@ -59,7 +59,7 @@ export default function Fprices() {
                             <tr key={product._id}>
                                 <td>{product.name}</td>
                                 <td>{product.category}</td>
-                                <td>₹{product.price}</td>
+                                <td>₹{product.sellingPrice}</td>
                                 <td>{product.per}</td>
                                 <td>
                                     {product.image ? (

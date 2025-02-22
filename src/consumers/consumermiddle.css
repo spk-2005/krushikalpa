@@ -1,0 +1,111 @@
+#farmermiddle-section {
+  padding: 2em;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60vh;
+  justify-content: space-between;
+  gap: 2em;
+  position: relative;
+  flex-wrap: wrap; /* Allows stacking on smaller screens */
+}
+#farmermiddle-section::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('kk1.webp') !important;
+  background-size: cover;
+  background-position: center;
+  opacity: 1; /* Set your desired opacity here */
+  filter: brightness(.4);
+  z-index: -1; /* Ensures the image stays behind the content */}
+.content button{
+  background-color: antiquewhite;
+  text-align: center;
+  padding: 5px 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+}
+.farmhero-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+#farmermiddle-section img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Content Styling */
+#farmermiddle-section .content {
+  flex: 1;
+  text-align: center;
+}
+
+#farmermiddle-section h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgb(255, 200, 62);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0.5em;
+}
+
+#farmermiddle-section p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  #farmermiddle-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #farmermiddle-section img {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  #farmermiddle-section h2 {
+    font-size: 1.5em;
+  }
+
+  #farmermiddle-section p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  #farmermiddle-section {
+    padding: 1.5em;
+  }
+
+  #farmermiddle-section img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  #farmermiddle-section h2 {
+    font-size: 1.3em;
+  }
+
+  #farmermiddle-section p {
+    font-size: 0.95em;
+  }
+ .farmhero-wrapper{
+  flex-direction: column;
+ } 
+}

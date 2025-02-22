@@ -10,12 +10,12 @@ export default function Products() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const apiUrl = "https://krushikalpa-backend.onrender.com/fproducts";
+        const apiUrl = "http://localhost:5000/fproducts";
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
                 setPosts(data);
-                setFilteredPosts(data); // Set initial filtered posts
+                setFilteredPosts(data);
             })
             .catch((err) => console.error('Error fetching:', err));
 
@@ -31,7 +31,6 @@ export default function Products() {
         return () => clearInterval(interval);
     }, []);
 
-    // Filter products based on search input
     useEffect(() => {
         const filtered = posts.filter(post =>
             post.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -58,9 +57,9 @@ export default function Products() {
     };
 
     return (
-        <section id="fproducts-section">
+        <section id="cproducts-section">
             <div className="products-container">
-            <h1>Sell Your Products Now</h1>
+                <h1>Sell Your Products Now</h1>
                 <div className="date-time">
                     <p>{currentDateTime}</p>
                 </div>
@@ -87,7 +86,7 @@ export default function Products() {
                                         />
                                         <div className="product-info">
                                             <h3 className="product-name">{post.name}</h3>
-                                            <span className="product-price">{post.price}/<span id='per'>{post.per}</span></span>
+                                            <span className="product-price">{post.buyingPrice}/<span id='per'>{post.per}</span></span>
                                         </div>
                                     </div>
                                 ))}

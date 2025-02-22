@@ -1,85 +1,98 @@
+
+
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './sellproducts.css';
+
 export default function Sellproducts() {
     const location = useLocation();
     const { product } = location.state || {};  
 
-    const [kgAvailable, setKgAvailable] = useState('');
-    const [receipt, setReceipt] = useState(null);
-    
+    const [quantity, setQuantity] = useState('');
+
     console.log('Product from state:', product);
 
     if (!product) {
         return <p>No product data available</p>;
     }
-    const handlesell = () => {
+    
+    const handleBuy = () => {
         const name = localStorage.getItem('name');
         const email = localStorage.getItem('email');
-        const dateTime = new Date().toLocaleString();
+        
+        // Format date to match MongoDB format
+        const now = new Date();
+        const dateTime = now.toLocaleString('en-IN', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).replace(',', ', ');
     
-        const saleData = {
-            name, 
+        const buyData = {
+            name,
             email,
             productName: product.name,
             category: product.category,
-            price: product.price,
-            dateTime,
-            kgAvailable,
-            receipt,
+            buyingPrice: product.buyingPrice,
+            quantity: Number(quantity),
+            dateTime
         };
     
-        fetch('https://krushikalpa-backend.onrender.com/selledproducts', {
+        fetch('http://localhost:5000/soldproducts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(saleData),
+            body: JSON.stringify(buyData),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            console.log('Sale data saved:', data);
-            alert('Product successfully sold!');
+            console.log('Purchase data saved:', data);
+            alert('Product successfully purchased!');
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('Failed to save sale data');
+            alert('Failed to save purchase data');
         });
     };
-    
     return (
         <>
-        <h1 id='sehead'>Sell Your Product </h1>
-        <div id='sellprod-section'>
-            <section className='container'>
-                <div className='product-info'>
-                    <span>Category: {product.category}</span>
-                    <h2>{product.name}</h2>
-                    <img 
-                        src={`data:image/jpeg;base64,${product.image}`} 
-                        alt={product.name} 
-                        style={{ width: '300px', height: 'auto' }}
-                    />
-                    <p>Price: {product.price}₹/Kg</p>
-                </div>
-            </section>
-            
-            <section>
-                <div className='input-section'>
-                    <input 
-                        type='file' 
-                        onChange={(e) => setReceipt(e.target.files[0])} 
-                    />
-                    <input 
-                        type='text' 
-                        placeholder='Enter Number Of Kgs/dozens/liters Available'
-                        value={kgAvailable}
-                        onChange={(e) => setKgAvailable(e.target.value)}
-                    />
-                    <button onClick={handlesell}>Sell Now</button>
-                </div>
-            </section>
-        </div>
+            <h1 id='buhead'>Buy Your Product</h1>
+            <div id='buyprod-section'>
+                <section className='buy-container'>
+                    <div className='buy-product-info'>
+                        <span>Category: {product.category}</span>
+                        <h2>{product.name}</h2>
+                        <img 
+                            src={`data:image/jpeg;base64,${product.image}`} 
+                            alt={product.name} 
+                            style={{ width: '300px', height: 'auto' }}
+                        />
+                        <p>Price: {product.sellingPrice}₹/{product.per}</p>
+                    </div>
+                </section>
+                
+                <section>
+                    <div className='buy-input-section'>
+                        <input 
+                            type='text' 
+                            placeholder='Enter Quantity (kg/dozen/liter)'
+                            value={quantity}
+                            onChange={(e) => setQuantity(e.target.value)}
+                        />
+                        <button onClick={handleBuy}>Buy Now</button>
+                    </div>
+                </section>
+            </div>
         </>
     );
 }

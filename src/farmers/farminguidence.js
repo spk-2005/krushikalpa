@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './farmingguidence.css';
+import Chatbot from '../Chatbot';
 export default function Farminguidence() {
+
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqData = [

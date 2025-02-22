@@ -1,0 +1,217 @@
+/* General Section Styling */
+#checkout {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Order Summary Styling */
+  .order-summary h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .order-summary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-summary li {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .order-summary li strong {
+    color: #333;
+  }
+  
+  .order-summary button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .order-summary button:hover {
+    background-color: #218838;
+  }
+  
+  .order-summary button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Shipping Information Styling */
+  .shipping-info {
+    margin-top: 30px;
+  }
+  
+  .shipping-info h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .shipping-info input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .shipping-info input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Payment Method Styling */
+  .payment-method {
+    margin-top: 30px;
+  }
+  
+  .payment-method h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .payment-method select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .payment-method select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Checkout Button Styling */
+  .checkout-button {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .checkout-button button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* Confirmation Message Styling */
+  .confirmation-message {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #e7f7e7;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+  }
+  
+  .confirmation-message h2 {
+    font-size: 1.8rem;
+    color: #28a745;
+  }
+  
+  .confirmation-message p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #checkout {
+      padding: 20px;
+    }
+  
+    .order-summary li {
+      font-size: 1rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 8px 18px;
+    }
+  
+    .shipping-info input {
+      padding: 8px;
+    }
+  
+    .payment-method select {
+      padding: 8px;
+    }
+  
+    .checkout-button button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    .confirmation-message {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #checkout {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .order-summary li {
+      font-size: 0.9rem;
+    }
+  
+    .shipping-info input {
+      padding: 6px;
+    }
+  
+    .payment-method select {
+      padding: 6px;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  
+    .checkout-button button {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  
+    .confirmation-message h2 {
+      font-size: 1.5rem;
+    }
+  
+    .confirmation-message p {
+      font-size: 1rem;
+    }
+  }
+  

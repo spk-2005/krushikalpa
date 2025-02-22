@@ -1,0 +1,209 @@
+/* Track Order Styles */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1e40af;
+    --background-light: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --error-bg: #fef2f2;
+    --error-border: #fee2e2;
+    --error-text: #991b1b;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+  }
+  
+  /* Container Styles */
+  #track-order {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+  
+  #track-order h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Table Container */
+  .order-table-container {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Table Styles */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  
+  .order-table thead {
+    background-color: var(--background-light);
+  }
+  
+  .order-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .order-table td {
+    padding: 1rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .order-table tbody tr:hover {
+    background-color: var(--background-light);
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Status Styles */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  /* Loading State */
+  .loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+  }
+  
+  .spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid var(--background-light);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Error State */
+  .error-message {
+    padding: 1rem;
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: var(--error-text);
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: var(--background-light);
+    border-radius: 0.5rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    #track-order {
+      padding: 1rem;
+    }
+    
+    .order-table th,
+    .order-table td {
+      padding: 0.75rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .order-table-container {
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid var(--border-color);
+    }
+  
+    .order-table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .order-table th,
+    .order-table td {
+      white-space: nowrap;
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media screen and (max-width: 640px) {
+    #track-order h1 {
+      font-size: 1.5rem;
+    }
+  
+    .order-table th,
+    .order-table td {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+    }
+  
+    /* Stack table on mobile */
+    .order-table thead {
+      display: none;
+    }
+  
+    .order-table tr {
+      display: block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+    }
+  
+    .order-table td {
+      display: flex;
+      padding: 0.75rem;
+      border: none;
+      align-items: center;
+    }
+  
+    .order-table td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      width: 40%;
+      margin-right: 1rem;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    #track-order {
+      padding: 0;
+    }
+  
+    .order-table-container {
+      box-shadow: none;
+    }
+  
+    .order-table th,
+    .order-table td {
+      border: 1px solid #000;
+    }
+  }

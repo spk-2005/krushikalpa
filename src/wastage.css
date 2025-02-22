@@ -1,98 +1,174 @@
-/* General Styles */
 .wastage-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-    padding: 20px;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wastage-cont {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.wastage-cont h2 {
+  color: #2d3748;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.wastage-cont form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wastage-cont label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wastage-cont label span {
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.wastage-cont input,
+.wastage-cont select {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.wastage-cont input:focus,
+.wastage-cont select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.wastage-cont input[type="file"] {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.wastage-cont button {
+  background-color: #4299e1;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wastage-cont button:hover {
+  background-color: #3182ce;
+  transform: translateY(-1px);
+}
+
+.wastage-cont button:active {
+  transform: translateY(0);
+}
+
+.price-info {
+  background-color: #f7fafc;
+  padding: 0.75rem;
+  border-radius: 6px;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.price-info strong {
+  color: #2b6cb0;
+}
+
+.camera-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+.camera-container video {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.camera-container button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #48bb78;
+}
+
+.camera-container button:last-child {
+  background-color: #e53e3e;
+}
+
+.image-preview {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.image-preview button {
+  background-color: #ed8936;
+}
+
+/* Loading state styles */
+button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Error state styles */
+.error-message {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Success message styles */
+.success-message {
+  color: #38a169;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .wastage-section {
+    padding: 1rem;
   }
   
   .wastage-cont {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
+    padding: 1.5rem;
+    margin: 1rem;
   }
   
- .wastage-section h2 {
-    color: #333;
-    margin-bottom: 15px;
+  .wastage-cont h2 {
+    font-size: 1.5rem;
   }
-  
- .wastage-section p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  /* Form Styles */
- .wastage-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
- .wastage-section label {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    font-weight: bold;
-    color: #333;
-  }
-  
- .wastage-section span {
-    margin-bottom: 5px;
-  }
-  
- .wastage-section input,.wastage-section select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-  }
-  
- .wastage-section input:focus,.wastage-section select:focus {
-    border-color: #007bff;
-  }
-  
- .wastage-section button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
- .wastage-section button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .wastage-cont {
-      width: 90%;
-      padding: 15px;
-    }
-  
-   .wastage-section h2 {
-      font-size: 20px;
-    }
-  
-  .wastage-section  p {
-      font-size: 14px;
-    }
-  
-   .wastage-section input,.wastage-section select,.wastage-section button {
-      font-size: 14px;
-      padding: 8px;
-    }
-  }
-  
+}

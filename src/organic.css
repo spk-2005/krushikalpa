@@ -1,0 +1,183 @@
+.organic-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background-color: #f9f7f5;
+  }
+  
+  .organic-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .organic-header h1 {
+    color: #2d5a27;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  
+  .organic-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #4a8b3d;
+    border-radius: 2px;
+  }
+  
+  .organic-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .benefit-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: #e8f5e9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: #2d5a27;
+    font-size: 1.8rem;
+  }
+  
+  .benefit-card h3 {
+    color: #2d5a27;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .benefit-card p {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .comparison-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 4rem;
+  }
+  
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .comparison-table th {
+    background: #e8f5e9;
+    color: #2d5a27;
+  }
+  
+  .comparison-table tr:hover {
+    background: #f9f9f9;
+  }
+  
+  .cta-section {
+    text-align: center;
+    padding: 3rem;
+    background: #e8f5e9;
+    border-radius: 15px;
+  }
+  
+  .cta-section h2 {
+    color: #2d5a27;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #4a8b3d;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .cta-button:hover {
+    background: #2d5a27;
+  }
+  
+  @media (max-width: 768px) {
+    .organic-header h1 {
+      font-size: 2rem;
+    }
+  
+    .organic-intro {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .comparison-table {
+      display: block;
+      overflow-x: auto;
+    }
+  
+    .cta-section {
+      padding: 2rem 1rem;
+    }
+  
+    .cta-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .organic-section {
+      padding: 2rem 1rem;
+    }
+  
+    .benefit-card {
+      padding: 1.5rem;
+    }
+  
+    .comparison-section {
+      padding: 1.5rem;
+    }
+  }
